@@ -1,0 +1,744 @@
+/*RESET CSS*/
+
+body {
+  width: 100vmax;
+}
+
+html,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* POST CSS*/
+
+.postcard-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  margin: 7px;
+  padding: 5px;
+  width: 170px;
+  height: 250px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+.post-list-style {
+  display: flex;
+  margin-top: 15px;
+  padding: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+}
+
+.post-image {
+  width: 600px;
+  height: 550px;
+}
+.search-bar-listings {
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+}
+.search-bar {
+  display: flex;
+  width: 95vmax;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.title-img {
+  height: 200px;
+}
+
+.title {
+  margin-left: 10px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 5px;
+  background: #cad2c5;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.search-container {
+  margin-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid black;
+}
+
+.category-input {
+  width: 25vmax;
+  padding: 12px 20px;
+  margin: 8px 50px;
+  background: #cad2c5;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+#img-button {
+  cursor: pointer;
+}
+
+.post-view-parent {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-post-container {
+  width: 500px;
+  height: 400px;
+}
+.img-container {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}
+.post-content-container {
+  display: flex;
+  width: 30%;
+  margin-top: 15px;
+  margin-left: 54px;
+}
+.post-info {
+  margin-left: 50px;
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+}
+.post-control {
+  display: flex;
+  width: 30%;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid black;
+}
+#post-button {
+  margin: 10px;
+  cursor: pointer;
+}
+#post-font {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+}
+
+.post-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+/*post create CSS*/
+.editor-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.editor-background {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+  width: 40vw;
+}
+
+.post-content {
+  height: 150px;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 10px;
+  border-radius: 2px;
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-style: normal;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.post-title-input {
+  height: 30px;
+  width: 90%;
+}
+
+.post-cat-input {
+  height: 52px;
+  width: 93%;
+}
+
+#post-input {
+  margin: 10px;
+  border-radius: 2px;
+  padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-style: normal;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/*Auth CSS*/
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+.login-input {
+  background: rgb(202, 210, 197);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 15px 25px 35px 25px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-error-message {
+  font-size: 30px;
+  margin: 15px;
+  font-weight: bold;
+  color: rgb(250, 69, 69);
+}
+
+.input-style {
+  width: 95%;
+  padding: 12px 20px;
+  border-radius: 7px;
+  margin: 8px;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+}
+.profile-view {
+  display: flex;
+  margin-left: 10%;
+  margin-top: 30px;
+  width: 30%;
+}
+.profile-control-container {
+  width: 10vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-buttons {
+  margin-left: 10px;
+}
+
+#auth-button {
+  cursor: pointer;
+  margin: 3px;
+  width: 80%;
+  margin: auto;
+}
+#profile-button {
+  cursor: pointer;
+  margin: 3px;
+}
+
+/*NAV CSS*/
+
+.header-background-gradient {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100vmax;
+  height: 95px;
+  background: linear-gradient(
+      90deg,
+      rgba(53, 79, 82, 0.5) 0%,
+      rgba(202, 210, 197, 1) 0.01%,
+      rgba(53, 79, 82, 0.5) 50.23%
+    ),
+    #253b3e;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+  margin-left: 30px;
+}
+
+.nav-links-container {
+  margin-right: 60px;
+  display: flex;
+  flex-direction: row;
+}
+.home-button2 {
+  margin-right: 15px;
+}
+
+.mobile-links-container {
+  display: none;
+}
+
+.mobile-links-container-show {
+  display: none;
+}
+
+.drop-down-menu {
+  display: none;
+}
+
+.nav-account-true .nav-account-true {
+  display: flex;
+  flex-direction: row;
+}
+
+/*#######################################################################################################*/
+
+/*Iphone X*/
+
+@media (max-width: 375px) {
+  /*NAV CSS*/
+  .header-background-gradient {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 812px;
+    height: 200px;
+    background: linear-gradient(
+        90deg,
+        rgba(53, 79, 82, 0.5) 0%,
+        rgba(202, 210, 197, 1) 0.01%,
+        rgba(53, 79, 82, 0.5) 50.23%
+      ),
+      #253b3e;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .logo {
+    height: 140px;
+    margin-left: 30px;
+  }
+
+  .nav-links-container {
+    display: none;
+  }
+
+  .mobile-links-container-show {
+    background-color: rgba(53, 79, 82, 0.9);
+    position: absolute;
+    right: -437px;
+    top: 199px;
+    display: flex;
+    width: 812px;
+    height: 500px;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    z-index: 1;
+  }
+
+  .mobile-links-container {
+    display: none;
+  }
+
+  .home-button {
+    margin-top: 10px;
+    margin: auto;
+  }
+  .home-button2 {
+    margin-top: 50px;
+    width: 450px;
+  }
+
+  .drop-down-menu {
+    display: flex;
+    margin-right: 50px;
+  }
+  .nav-account-true {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /*Auth CSS*/
+  .login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 230px;
+  }
+  .login-input {
+    background: rgb(202, 210, 197);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding: 15px 25px 35px 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .login-error-message {
+    font-size: 30px;
+    margin: 15px;
+    font-size: 45px;
+    font-weight: bold;
+    color: rgb(250, 69, 69);
+  }
+
+  .input-style {
+    width: 95%;
+    height: 100px;
+    padding: 12px 20px;
+    border-radius: 7px;
+    margin: 15px;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    font-size: 200%;
+    font-weight: bolder;
+  }
+  .profile-view {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10%;
+    margin-top: 30px;
+    width: 700px;
+  }
+  .profile-control-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .profile-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  .auth-button-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  #auth-button {
+    width: 80%;
+    margin-top: 15px;
+  }
+  #profile-button {
+    cursor: pointer;
+    margin: 3px;
+  }
+
+  /*post*/
+  .postcard-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    margin: 10px;
+    padding: 5px;
+    width: 326px;
+    height: 450px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background-color: whitesmoke;
+    border-radius: 5px;
+  }
+  .post-list-style {
+    display: flex;
+    margin-top: 15px;
+    padding: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: 1px solid black;
+  }
+
+  .search-bar-listings {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+  }
+  .search-bar {
+    display: flex;
+    width: 95vmax;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .title-img {
+    height: 375px;
+  }
+  .title {
+    font-size: 40px;
+    margin-left: 10px;
+  }
+
+  .search-input {
+    width: 90%;
+    height: 100px;
+    padding: 12px 20px;
+    margin: 8px 5px;
+    background: #cad2c5;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 200%;
+    font-weight: bolder;
+  }
+  .search-container {
+    margin-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid black;
+  }
+
+  .category-input {
+    width: 85%;
+    height: 100px;
+    padding: 12px 20px;
+    margin: 8px 70px;
+    background: #cad2c5;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 200%;
+  }
+
+  #img-button {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+  }
+
+  .post-view-parent {
+    padding-left: 55px;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  .post-image {
+    width: 700px;
+    height: 800px;
+  }
+  .img-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .post-content-container {
+    display: flex;
+    width: 30%;
+    margin-top: 15px;
+  }
+  .post-info {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+  }
+  .post-control {
+    display: flex;
+    width: 30%;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: unset;
+  }
+  #post-button {
+    margin: 10px;
+    cursor: pointer;
+    width: 330px;
+    height: 200px;
+  }
+  #post-font {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 37px;
+    padding-bottom: 20px;
+  }
+
+  .post-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 5px;
+  }
+  .editor-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .editor-background {
+    display: flex;
+    flex-direction: column;
+    margin-top: 200px;
+    width: 700px;
+  }
+
+  .post-content {
+    height: 300px;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 10px;
+    border-radius: 2px;
+    padding: 10px;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 40px;
+    font-style: normal;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  .post-title-input {
+    height: 53px;
+    width: 90%;
+  }
+
+  .post-cat-input {
+    height: 75px;
+    width: 93%;
+  }
+
+  #post-input {
+    margin: 10px;
+    border-radius: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    border-style: solid;
+    border-width: 1px;
+  }
+
+  #-cat {
+    height: 112px;
+  }
+
+  .custom-file-upload {
+    height: 100px;
+  }
+}
