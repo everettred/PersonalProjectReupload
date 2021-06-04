@@ -65,7 +65,7 @@ module.exports = {
     // if (displayUserId == req.session.user.user_id) {
     //   return res.send(req.session.user);
     // } else return gotUser[0];
-  },
+  //},
   getUser: (req, res) => {
     if (!req.session.user) {
       console.log("session does not exist");
