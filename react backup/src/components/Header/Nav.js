@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -10,35 +10,42 @@ import homebutton from "../assets/homebutton.svg";
 import accountbutton from "../assets/accountbutton.svg";
 import logoutbutton from "../assets/logoutbutton.svg";
 import menuIcon from "../assets/MenuIcon.svg";
-function Nav(props) {
-  const [toggleMenu, setToggleMenu] = useState(false);
 
-  const logoutAxios = () => {
+class Nav extends Component {
+  // src={homebutton}
+  constructor(props) {
+    super(props);
+    this.state = {
+      toggleMenu: false,
+    };
+  }
+
+  logoutAxios = () => {
     console.log("hit logout");
     axios.post("/api/auth/logout");
   };
 
-  const logoutCaller = () => {
-    logoutAxios();
-    props.logout();
+  logoutCaller = () => {
+    this.logoutAxios();
+    this.props.logout();
   };
 
-  const toggleMenuHandle = () => {
-    setToggleMenu(!toggleMenu);
+  toggleMenuHandle = () => {
+    this.setState({ toggleMenu: !this.state.toggleMenu });
   };
 
-  const authButton = () => {
+  authButton = () => {
     let navAcountStyle = {
       display: "flex",
       flexDirection: "column",
     };
 
-    if (!props.username) {
+    if (!this.props.username) {
       return (
         <Link className="home-button" to="/login">
           <img
             className="home-button2"
-            onClick={toggleMenuHandle}
+            onClick={this.toggleMenuHandle}
             src={loginbutton}
             alt="Login"
           />
@@ -47,17 +54,17 @@ function Nav(props) {
     } else {
       return (
         <nav className="nav-account-true">
-          <Link className="home-button" to={`/profile/${props.user_id}`}>
+          <Link className="home-button" to={`/profile/${this.props.user_id}`}>
             <img
-              onClick={toggleMenuHandle}
+              onClick={this.toggleMenuHandle}
               src={accountbutton}
               className="home-button2"
               alt="Account"
             />
           </Link>
-          <Link to="/login" onClick={() => logoutCaller()}>
+          <Link to="/login" onClick={() => this.logoutCaller()}>
             <img
-              onClick={toggleMenuHandle}
+              onClick={this.toggleMenuHandle}
               src={logoutbutton}
               className="home-button2"
               alt="Logout"
@@ -71,41 +78,43 @@ function Nav(props) {
   //login depending on if user is logged in (isAuthenticated)
   //this can be done maybe in a if statement that checks my state username variable to be true
   //if statemnt should exist in my render and be called on my link
-  let menuToggler = toggleMenu
-    ? "mobile-links-container-show"
-    : "mobile-links-container";
-  return (
-    <section>
-      <section className="header-background-gradient">
-        <img className="logo" src={gslogo} alt="Garage Sellers" />
+  render() {
+    let { toggleMenu } = this.state;
+    let menuToggler = toggleMenu
+      ? "mobile-links-container-show"
+      : "mobile-links-container";
+    return (
+      <section>
+        <section className="header-background-gradient">
+          <img className="logo" src={gslogo} alt="Garage Sellers" />
 
-        <nav className="nav-links-container">
-          <Link to="/listings">
-            <img src={homebutton} className="home-button2" alt="Home" />
-          </Link>
-          <section>{authButton()}</section>
-        </nav>
-        <img
-          onClick={toggleMenuHandle}
-          className="drop-down-menu"
-          src={menuIcon}
-        ></img>
-      </section>
-      <nav className={menuToggler}>
-        <Link to="/listings">
+          <nav className="nav-links-container">
+            <Link to="/listings">
+              <img src={homebutton} className="home-button2" alt="Home" />
+            </Link>
+            <section>{this.authButton()}</section>
+          </nav>
           <img
-            onClick={toggleMenuHandle}
-            src={homebutton}
-            className="home-button2"
-            alt="Home"
-          />
-        </Link>
-        {authButton()}
-      </nav>
-    </section>
-  );
+            onClick={this.toggleMenuHandle}
+            className="drop-down-menu"
+            src={menuIcon}
+          ></img>
+        </section>
+        <nav className={menuToggler}>
+          <Link to="/listings">
+            <img
+              onClick={this.toggleMenuHandle}
+              src={homebutton}
+              className="home-button2"
+              alt="Home"
+            />
+          </Link>
+          {this.authButton()}
+        </nav>
+      </section>
+    );
+  }
 }
-
 const mapStateToProps = (state) => state;
 const mapDispatchToProps = {
   logout: logout,

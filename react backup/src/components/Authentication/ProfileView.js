@@ -31,10 +31,7 @@ function ProfileView(props) {
     getUserPosts();
   };
 
-  useEffect(() => {
-    getUserInfo();
-  }, []);
-
+  const useEffect = (getUserInfo(), []);
   const logoutAxios = () => {
     console.log("hit logout axios");
     axios.post("/api/auth/logout");
